@@ -1,0 +1,80 @@
+Web application should have alpine ,python 3.7
+Setup
+
+Helm is  nothing but kubernetes package manager to get the services deployed 
+Helm can also do something else
+Hem makes it easy to start using kubernetes wit real applications
+
+Container is nothing but a small omputet inside a big computer
+Container should have alpine and python and setup 
+It enables the  move to production with repeatable results.It has template functionalities
+How it is used
+Install curated,high quality a[pplications
+Backend by the community
+Best practices included
+
+
+ 
+
+Deployment controller is the one which takes care of the failover pods and recreates the pods
+Each pods get an ip and it gets changed when I gets killed
+
+Ingress controller is the one through which we have communication for the clusters to the world.
+It has routes to all the services insdie the containers.
+ 
+So here depending on the service you want to connect to you will go to /foo and then you will connect to service a and you get what you want
+
+How do we version control, a deployment
+How do we keep track of each deployment
+For eg nginx 12.7  and ingress 6.9 if you want to add new one
+
+Helm is the one which we use to add those resources 
+Chart is kind of ametadata which has group of manifest files and which has the deployment files
+ 
+
+ 
+
+We can do things like rollback
+Here If you see we have internet which is routing to Ingress and where we export 443 port for ingress service and weuse selector  to select the service using label service .
+
+That is how the selector selects the app needs to get deployed and it routes through  label
+
+
+
+From there we can go to different deployments or services which needs to be deployed.
+
+
+
+ 
+
+Script needed for the Ingress app to be installed
+ 
+
+
+I have create dtCt against the helm charts please review it and let me know How to resolve it .I have been struggling
+ 
+
+We have CI Pipeline Enhancements
+-Pull request to ensure code quality
+Helm/Multihelm Integration
+For assessments ,they are using Multihelm.
+Jenkins as the Continuous delivery tool to deploy micro services on kubernetes/\
+ 
+
+First u make some changes ,then you add those changes to the gitrepo.
+You will have the git config file and you fork your repo before that.
+
+Then you commit your changes and the Jenkins pipeline will take care of it after that.
+ 
+
+
+Success Label-It confirms that the bitbucket has the code and it is ready for the next step.
+PR Local Merge:This is the step where the code merges and validates that it is merged and it gets pushed next.
+Build:Calling the maven,compile the code and does code builds,unit test cases.
+Static analysis and Publish:We do not publish intentionally.
+If you are doing any docker build ,then it can be also performed here.
+
+ 
+We can also add helm charts dry run step along with other validation steps to make sure that the helm  charts will be deployed when the actual deployments happen.
+
+
